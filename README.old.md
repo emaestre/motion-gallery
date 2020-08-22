@@ -1,2 +1,0 @@
-# motion-gallery
-MotionGallery App
