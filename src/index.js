@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'css/main.css';
-import App from './App';
+import MotionGallery from 'components/MotionGallery';
 
 ReactDOM.render(
     <React.StrictMode>
-        <App />
+        <MotionGallery />
     </React.StrictMode>,
     document.getElementById('root')
 );

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import ImageCard from 'components/ImageCard';
 import SearchBar from 'components/SearchBar';
 
-function App() {
+function MotionGallery() {
     const [images, setImages] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [term, setTerm] = useState('');
@@ -52,4 +52,4 @@ function App() {
     );
 }
 
-export default App;
+export default MotionGallery;
