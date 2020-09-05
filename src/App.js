@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import ImageCard from 'components/ImageCard';
+import SearchBar from 'components/SearchBar';
 
 function App() {
     const [images, setImages] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
     const [term, setTerm] = useState('');
 
     const PIXABAY_API_KEY = useMemo(
@@ -11,7 +12,10 @@ function App() {
         []
     );
 
+    const imagesFound = useMemo(() => images.length > 0, [images]);
+
     useEffect(() => {
+        setIsLoading(true);
         fetch(
             `https://pixabay.com/api/?key=${PIXABAY_API_KEY}&q=${term}&image_type=photo&pretty=true`
         )
@@ -25,6 +29,14 @@ function App() {
 
     return (
         <div className="container mx-auto">
+            <SearchBar handleSubmit={setTerm} />
+
+            {!imagesFound && (
+                <div className="text-5xl text-center mx-auto mt-32">
+                    No images were found with this term.
+                </div>
+            )}
+
             {isLoading ? (
                 <div className="text-5xl text-center mx-auto mt-32">
                     Loading...
