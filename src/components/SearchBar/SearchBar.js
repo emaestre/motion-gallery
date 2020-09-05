@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 
 function SearchBar(props) {
-    const { handleSubmit: triggerSubmit } = props;
+    const { handleSubmit: triggerSubmit, ...restProps } = props;
 
     const [currentInputValue, setCurrentInputValue] = useState('');
 
@@ -21,7 +21,10 @@ function SearchBar(props) {
     );
 
     return (
-        <div className="max-w-sm rounded overflow-hidden my-10 mx-auto">
+        <div
+            className="max-w-sm rounded overflow-hidden my-10 mx-auto"
+            {...restProps}
+        >
             <form
                 action=""
                 className="flex items-center border-b-2 border-teal-500 py-2"
