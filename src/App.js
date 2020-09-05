@@ -31,7 +31,7 @@ function App() {
         <div className="container mx-auto">
             <SearchBar handleSubmit={setTerm} />
 
-            {!imagesFound && (
+            {!isLoading && !imagesFound && (
                 <div className="text-5xl text-center mx-auto mt-32">
                     No images were found with this term.
                 </div>
