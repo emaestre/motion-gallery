@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import 'css/main.css';
 import MotionGallery from 'components/MotionGallery';
 
 ReactDOM.render(
-    <React.StrictMode>
+    <StrictMode>
         <MotionGallery />
-    </React.StrictMode>,
+    </StrictMode>,
     document.getElementById('root')
 );
